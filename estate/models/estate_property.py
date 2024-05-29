@@ -7,6 +7,8 @@ class Property(models.Model):
     _name = "estate.property"
     _description = "Real Estate Property"
 
+    property_type_id = fields.Many2one('estate.property.type', string='Property Type', index=True)
+
     name = fields.Char('Property Title', required=True)
     description = fields.Text('Description')
     postcode = fields.Char('Post Code')
