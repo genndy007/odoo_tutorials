@@ -12,4 +12,5 @@
     'depends': [
         'base',
     ],
+    'license': 'GPL-3',
 }
