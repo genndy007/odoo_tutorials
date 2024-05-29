@@ -6,11 +6,14 @@
     'description': '29 May 2024 created tutorialed Estate App',
     'author': 'Hennadii Kochev',
     'website': 'https://github.com/genndy007',
+    'license': 'GPL-3',
 
-    'application': True,
-    'installable': True,
     'depends': [
         'base',
     ],
-    'license': 'GPL-3',
+    'data': [
+        'security/ir.model.access.csv',
+    ],
+    'application': True,
+    'installable': True,
 }
