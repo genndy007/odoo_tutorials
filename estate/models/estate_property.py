@@ -34,3 +34,16 @@ class Property(models.Model):
         help='Geo Orient of Garden',
     )
     active = fields.Boolean('Is Active', default=True)
+    state = fields.Selection(
+        string='Property State',
+        selection=[
+            ('new', 'New'),
+            ('offer_received', 'Offer Received'),
+            ('offer_accepted', 'Offer Accepted'),
+            ('sold', 'Sold'),
+            ('cancelled', 'Cancelled'),
+        ],
+        required=True,
+        copy=False,
+        default='new',
+    )
