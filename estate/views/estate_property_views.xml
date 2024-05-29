@@ -77,22 +77,19 @@
         <field name="model">estate.property</field>
         <field name="arch" type="xml">
             <search string="Estate Property">
-                <field name="name" string="Title" />
+                <field name="name" string="Title"/>
                 <field name="postcode"/>
                 <field name="expected_price"/>
                 <field name="bedrooms"/>
                 <field name="living_area"/>
                 <field name="facades"/>
                 <separator/>
-                <filter string="Available Properties" name="state" domain="['|', ('state', '=', 'new'), ('state', '=', 'offer_received')]"/>
+                <filter string="Available Properties" name="state"
+                        domain="['|', ('state', '=', 'new'), ('state', '=', 'offer_received')]"/>
                 <group expand="1" string="Group By">
                     <filter string="PostCode" name="postcode" context="{'group_by': 'postcode'}"/>
                 </group>
             </search>
         </field>
     </record>
-
-
-
-
 </odoo>
