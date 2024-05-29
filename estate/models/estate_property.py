@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from odoo import fields, models
 
 
@@ -8,10 +10,14 @@ class Property(models.Model):
     name = fields.Char('Name', required=True)
     description = fields.Text('Description')
     postcode = fields.Char('Post Code')
-    date_availability = fields.Date('Date of Availability', copy=False)
+    date_availability = fields.Date(
+        'Date of Availability',
+        default=fields.Date.today() + timedelta(days=90),
+        copy=False,
+    )
     expected_price = fields.Float('Expected Price', required=True)
     selling_price = fields.Float('Selling Price', readonly=True, copy=False)
-    bedrooms = fields.Integer('# Bedrooms')
+    bedrooms = fields.Integer('# Bedrooms', default=2)
     living_area = fields.Integer('Living Area (m2)')
     facades = fields.Integer('# Facades')
     garage = fields.Boolean('Has Garage')
@@ -27,3 +33,4 @@ class Property(models.Model):
         ],
         help='Geo Orient of Garden',
     )
+    active = fields.Boolean('Is Active', default=True)
