@@ -73,6 +73,9 @@
                                     <field name="garden_orientation"/>
                                 </group>
                             </page>
+                            <page string="Offers">
+                                <field name="offer_ids"/>
+                            </page>
                             <page string="Personnel">
                                 <group>
                                     <field name="salesperson_id"/>
