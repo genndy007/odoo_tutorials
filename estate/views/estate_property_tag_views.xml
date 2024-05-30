@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="estate_property_tag_action" model="ir.actions.act_window">
+        <field name="name">Property Tags</field>
+        <field name="res_model">estate.property.tag</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new Property Tag</p>
+            <p>Use Property Tags to mark Property special characteristics.</p>
+        </field>
+    </record>
+
+    <record id="estate_property_tag_view_tree" model="ir.ui.view">
+        <field name="name">estate.property.tag.tree</field>
+        <field name="model">estate.property.tag</field>
+        <field name="arch" type="xml">
+            <tree string="Property Tag List">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="estate_property_tag_view_form" model="ir.ui.view">
+        <field name="name">estate.property.tag.form</field>
+        <field name="model">estate.property.tag</field>
+        <field name="arch" type="xml">
+            <form string="Property Tag">
+                <sheet>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <h1 class="mb32">
+                                <field name="name" class="mb16"/>
+                            </h1>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="estate_property_tag_view_search" model="ir.ui.view">
+        <field name="name">estate.property.tag.search</field>
+        <field name="model">estate.property.tag</field>
+        <field name="arch" type="xml">
+            <search string="Estate Property Tag">
+                <field name="name" string="Title"/>
+            </search>
+        </field>
+    </record>
+</odoo>
